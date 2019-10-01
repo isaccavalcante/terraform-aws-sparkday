@@ -4,7 +4,7 @@ TODO
 
 Modules:
 
-* [hello-world](./hello-world)
+* [hello-world](./modules/hello-world)
 
 References:
 
