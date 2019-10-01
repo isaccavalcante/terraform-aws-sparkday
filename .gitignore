@@ -1,0 +1,9 @@
+# AWS Credentials
+credentials.csv
+
+#  Local .terraform directories
+**/.terraform/*
+
+# .tfstate files
+*.tfstate
+*.tfstate.*
