@@ -48,7 +48,7 @@ func TestTerraformBasicExample(t *testing.T) {
 	actualTextExample2 := terraform.Output(t, terraformOptions, "example2")
 	actualExampleList := terraform.OutputList(t, terraformOptions, "example_list")
 	actualExampleMap := terraform.OutputMap(t, terraformOptions, "example_map")
-	//actualExampleProvider := terraform.OutputMap(t, terraformOptions, "provider_set")
+	actualExampleProvider := terraform.OutputMap(t, terraformOptions, "provider_output")
 
 	//terraform.
 
@@ -57,6 +57,6 @@ func TestTerraformBasicExample(t *testing.T) {
 	assert.Equal(t, expectedText, actualTextExample2)
 	assert.Equal(t, expectedList, actualExampleList)
 	assert.Equal(t, expectedMap, actualExampleMap)
-	//assert.Equal(t, expectedProvider, actualExampleProvider)
+	assert.Equal(t, expectedProvider, actualExampleProvider)
 
 }
