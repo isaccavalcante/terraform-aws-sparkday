@@ -58,5 +58,7 @@ func TestTerraformBasicExample(t *testing.T) {
 	assert.Equal(t, expectedList, actualExampleList)
 	assert.Equal(t, expectedMap, actualExampleMap)
 	assert.Equal(t, expectedProvider, actualExampleProvider)
+	assert.Equal(t, "us-west-2", actualExampleProvider["region"])
+	assert.Equal(t, "tiago-melo-developer", actualExampleProvider["profile"])
 
 }
