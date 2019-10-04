@@ -7,3 +7,6 @@ credentials.csv
 # .tfstate files
 *.tfstate
 *.tfstate.*
+
+# vendor folder
+test/vendor
