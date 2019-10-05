@@ -14,7 +14,7 @@ func TestTerraformBasicExampleDefaultValues(t *testing.T) {
 	expectedProvider := map[string]string{"profile":"my-default-profile", "region" : "us-west-2"}
 
 	terraformOptions := &terraform.Options{
-		TerraformDir: "../modules/terraform-basic-example",
+		TerraformDir: "../modules/terraform-variables-output-testing",
 		Vars: map[string]interface{}{
 			"example": expectedText,
 			"provider_set": expectedProvider,
@@ -38,12 +38,12 @@ func TestTerraformBasicExampleDevValues(t *testing.T) {
 	expectedProvider := map[string]string{"profile":"dev-profile", "region" : "us-west-2"}
 
 	terraformOptions := &terraform.Options{
-		TerraformDir: "../modules/terraform-basic-example",
+		TerraformDir: "../modules/terraform-variables-output-testing",
 		Vars: map[string]interface{}{
 			"example": expectedText,
 			"provider_set": expectedProvider,
 		},
-		VarFiles: []string{"varfile.tfvars"},
+		VarFiles: []string{"varfile-dev.tfvars"},
 	}
 	defer terraform.Destroy(t, terraformOptions)
 
@@ -64,7 +64,7 @@ func TestTerraformBasicExampleProdValues(t *testing.T) {
 	expectedProvider := map[string]string{"profile":"prod-profile", "region" : "us-east-1"}
 
 	terraformOptions := &terraform.Options{
-		TerraformDir: "../modules/terraform-basic-example",
+		TerraformDir: "../modules/terraform-variables-output-testing",
 		Vars: map[string]interface{}{
 			"example": expectedText,
 			"provider_set": expectedProvider,
