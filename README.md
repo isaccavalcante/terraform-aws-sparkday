@@ -5,7 +5,7 @@ Codebase for Terraform demo
 # Modules:
 
 * [hello-world](./modules/hello-world)
-* [terraform-basic-example](./modules/terraform-basic-example)
+* [terraform-variables-output-testing](./modules/terraform-variables-output-testing)
 
 # References:
 
