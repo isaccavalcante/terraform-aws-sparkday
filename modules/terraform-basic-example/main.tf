@@ -7,7 +7,3 @@ provider "aws" {
   profile = "${var.provider_set.profile}"
   region = "${var.provider_set.region}"
 }
-
-data "template_file" "example" {
-  template = "${var.example}"
-}

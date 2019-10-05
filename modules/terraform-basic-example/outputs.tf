@@ -1,5 +1,5 @@
 output "example" {
-  value = "${data.template_file.example.rendered}"
+  value = "${var.example}"
 }
 
 output "provider_output" {
