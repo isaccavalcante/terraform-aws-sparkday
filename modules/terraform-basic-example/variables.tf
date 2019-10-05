@@ -42,6 +42,6 @@ variable "provider_set" {
     description = "The Cloud provider is described here"
     type        = "map"
     default     = {
-        profile = "tiago-melo-developer"
+        profile = "my-default-profile"
         region  = "us-west-2"}
 }

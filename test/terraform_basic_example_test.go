@@ -7,7 +7,6 @@ import (
 	"github.com/stretchr/testify/assert"
 )
 
-// An example of how to test the simple Terraform module in examples/terraform-basic-example using Terratest.
 func TestTerraformBasicExample(t *testing.T) {
 	t.Parallel()
 
@@ -17,48 +16,30 @@ func TestTerraformBasicExample(t *testing.T) {
 	expectedProvider := map[string]string{"profile":"tiago-melo-developer", "region" : "us-west-2"}
 
 	terraformOptions := &terraform.Options{
-		// The path to where our Terraform code is located
 		TerraformDir: "../modules/terraform-basic-example",
-
-		// Variables to pass to our Terraform code using -var options
 		Vars: map[string]interface{}{
 			"example": expectedText,
-
-			// We also can see how lists and maps translate between terratest and terraform.
 			"example_list": expectedList,
 			"example_map":  expectedMap,
 			"provider_set": expectedProvider,
 		},
-
-		// Variables to pass to our Terraform code using -var-file options
 		VarFiles: []string{"varfile.tfvars"},
-
-		// Disable colors in Terraform commands so its easier to parse stdout/stderr
-		NoColor: true,
 	}
-
-	// At the end of the test, run `terraform destroy` to clean up any resources that were created
 	defer terraform.Destroy(t, terraformOptions)
 
-	// This will run `terraform init` and `terraform apply` and fail the test if there are any errors
 	terraform.InitAndApply(t, terraformOptions)
 
-	// Run `terraform output` to get the values of output variables
 	actualTextExample := terraform.Output(t, terraformOptions, "example")
 	actualTextExample2 := terraform.Output(t, terraformOptions, "example2")
 	actualExampleList := terraform.OutputList(t, terraformOptions, "example_list")
 	actualExampleMap := terraform.OutputMap(t, terraformOptions, "example_map")
 	actualExampleProvider := terraform.OutputMap(t, terraformOptions, "provider_output")
 
-	//terraform.
 
-	// Verify we're getting back the outputs we expect
 	assert.Equal(t, expectedText, actualTextExample)
 	assert.Equal(t, expectedText, actualTextExample2)
 	assert.Equal(t, expectedList, actualExampleList)
 	assert.Equal(t, expectedMap, actualExampleMap)
 	assert.Equal(t, expectedProvider, actualExampleProvider)
-	assert.Equal(t, "us-west-2", actualExampleProvider["region"])
-	assert.Equal(t, "tiago-melo-developer", actualExampleProvider["profile"])
 
 }
