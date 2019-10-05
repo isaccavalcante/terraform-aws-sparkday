@@ -6,6 +6,7 @@ Codebase for Terraform demo
 
 * [hello-world](./modules/hello-world)
 * [terraform-variables-output-testing](./modules/terraform-variables-output-testing)
+* [deploy-aws-components](./modules/deploy-aws-components)
 
 # References:
 
