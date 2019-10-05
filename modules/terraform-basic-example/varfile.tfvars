@@ -1,6 +1,6 @@
 example2 = "test"
 
 provider_set = {
-    profile = "new-profile"
-    region  = "us-east-1"
+    profile = "dev-profile"
+    region  = "us-west-2"
 }
