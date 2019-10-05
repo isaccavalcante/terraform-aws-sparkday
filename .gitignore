@@ -10,3 +10,7 @@ credentials.csv
 
 # vendor folder
 test/vendor
+
+# Dependency reference
+test/Gopkg.lock
+test/go.mod
