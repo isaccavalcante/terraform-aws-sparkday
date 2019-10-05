@@ -1,4 +1,4 @@
-example2 = "test"
+example = "dev-environment"
 
 provider_set = {
     profile = "dev-profile"

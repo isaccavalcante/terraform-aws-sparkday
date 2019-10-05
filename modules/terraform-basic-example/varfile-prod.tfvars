@@ -1,4 +1,4 @@
-example2 = "prod"
+example = "prod-environment"
 
 provider_set = {
     profile = "prod-profile"
